@@ -18,4 +18,7 @@ $res = new Result();
 $res->result = 'OK';
 $res->msg = 'Wydarzenie zostało dodane pomyślnie, id: '.$db->lastInsertId();
 
+header('Content-Type: application/json');
+echo json_encode($res);
+
 ?>

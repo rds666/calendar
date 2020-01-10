@@ -1,0 +1,30 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma, Verdana, sans-serif;
+}
+
+body {
+  background: #eee;
+}
+
+.app-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 2rem;
+  height: 6rem;
+  background: #47f;
+}
+
+.app-header > img {
+  width: 6rem;
+  height: 6rem;
+}
+
+.app-header > span {
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 6rem;
+}
+/*# sourceMappingURL=style.css.map */

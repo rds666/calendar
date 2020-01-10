@@ -6,21 +6,31 @@ body, html {
 
 body {
   background: #eee;
-}
-
-
-.app-header {
-  display: flex;
-  padding: 0 2rem;
-  height: 6rem;
-  background: #47f;
-  > img {
-    width: 6rem;
+  
+  > header {
+    display: flex;
+    padding: 0 2rem;
     height: 6rem;
+    background: #47f;
+    > img {
+      width: 6rem;
+      height: 6rem;
+    }
+    > span {
+      color: #fff;
+      font-size: 1.75rem;
+      line-height: 6rem;
+    }
   }
-  > span {
-    color: #fff;
-    font-size: 1.75rem;
-    line-height: 6rem;
+  
+  > main {
+    display: flex;
+    > div:first-child {
+      margin: 0 2rem 0 0;
+      width: 10rem;
+    }
+    > div:last-child {
+      width: calc(100% - 12rem);
+    }
   }
 }

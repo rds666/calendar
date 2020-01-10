@@ -8,7 +8,7 @@ body {
   background: #eee;
 }
 
-.app-header {
+body > header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,14 +17,29 @@ body {
   background: #47f;
 }
 
-.app-header > img {
+body > header > img {
   width: 6rem;
   height: 6rem;
 }
 
-.app-header > span {
+body > header > span {
   color: #fff;
   font-size: 1.75rem;
   line-height: 6rem;
+}
+
+body > main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body > main > div:first-child {
+  margin: 0 2rem 0 0;
+  width: 10rem;
+}
+
+body > main > div:last-child {
+  width: calc(100% - 12rem);
 }
 /*# sourceMappingURL=style.css.map */

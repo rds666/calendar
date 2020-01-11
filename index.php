@@ -9,9 +9,11 @@
 </head>
 <body>
 		<header class="app-header">
-				<img src="assets/images/logo.png" alt="Logo Day Planner Pro">
-				<span>Day Planner Pro</span>
-				<p id="desc">Get you day scheduled and do not miss any more of fucking boring tasks nobody else wants to do and forces you to do it</p>
+				<div>
+					<img src="assets/images/logo.png" alt="Logo Day Planner Pro">
+					<span>Day Planner Pro</span>
+				</div>
+				<p id="desc">Get you day scheduled and do not miss any more of boring tasks nobody else wants to do and forces you to do it</p>
 		</header>
 
 		<main>

@@ -6,20 +6,28 @@ body, html {
 
 body {
   background: #eee;
-  
   > header {
-    display: flex;
-    padding: 0 2rem;
-    height: 6rem;
-    background: #47f;
-    > img {
-      width: 6rem;
-      height: 6rem;
+    height: 8rem;
+    background: #47f; 
+    > div {
+      padding: 0 2rem;
+      display: flex;
+      > img {
+        width: 6rem;
+        height: 6rem;
+      }
+      > span {
+        color: #fff;
+        font-size: 1.75rem;
+        line-height: 6rem;
+      }
     }
-    > span {
+    #desc {
+      margin: 0;
+      padding: 0 3.5rem;
+      line-height: 2rem;
       color: #fff;
-      font-size: 1.75rem;
-      line-height: 6rem;
+      background-color: rgba(#000, 0.2);
     }
   }
   

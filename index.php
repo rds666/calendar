@@ -50,6 +50,7 @@
 				id: args.e.id()
 			},
 			function() {
+				$.post("send_email.php", { msg: 'Usunieto wydarzenie.' });
 				console.log("Usunięty.");
 				});
 			};
@@ -62,6 +63,7 @@
 					newEnd: args.newEnd.toString()
 				},
 						function() {
+							$.post("send_email.php", { msg: 'Przeniesiono wydarzenie.' });
 							console.log("Przeniesiony.");
 						});
 			};
@@ -74,6 +76,7 @@
 					newEnd: args.newEnd.toString()
 				},
 					function() {
+						$.post("send_email.php", { msg: 'Zeskalowano wydarzenie.' });
 						console.log("Zeskalowany");
 					});
 				};
@@ -100,6 +103,7 @@
 						note: note
 					},
 						function() {
+							$.post("send_email.php", { msg: 'Stworzono wydarzenie.' });
 							console.log("Stworzono.");
 						});
 				};

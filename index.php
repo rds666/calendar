@@ -11,108 +11,109 @@
 		<header class="app-header">
 				<img src="assets/images/logo.png" alt="Logo Day Planner Pro">
 				<span>Day Planner Pro</span>
+				<p id="desc">Get you day scheduled and do not miss any more of fucking boring tasks nobody else wants to do and forces you to do it</p>
 		</header>
 
 		<main>
 				<div>
-						<div>nav</div>
+					<div id="nav"></div>
 				</div>
 				<div>
-						<div>dp</div>
+					<div id="dp"></div>
 				</div>
 		</main>
 	
 		<script type="text/javascript">
-                var nav = new DayPilot.Navigator("nav");
-                nav.showMonths = 5;
-                nav.skipMonths = 5;
-                nav.selectMode = "week";
-                nav.onTimeRangeSelected = function(args) {
-                    dp.startDate = args.day;
-                    dp.update();
-                    loadEvents();
-                };
-                nav.init();
+			var nav = new DayPilot.Navigator("nav");
+			nav.showMonths = 5;
+			nav.skipMonths = 5;
+			nav.selectMode = "week";
+			
+			nav.onTimeRangeSelected = function(args) {
+				dp.startDate = args.day;
+				dp.update();
+				loadEvents();
+			};
+                
+			nav.init();
 
-                var dp = new DayPilot.Calendar("dp");
-                dp.viewType = "Week";
+			var dp = new DayPilot.Calendar("dp");
+			dp.viewType = "Week";
 
-                dp.eventDeleteHandling = "Update";
+			dp.eventDeleteHandling = "Update";
 
-                dp.onEventDeleted = function(args) {
-                    $.post("event_delete.php",
-                        {
-                            id: args.e.id()
-                        },
-                        function() {
-                            console.log("Usunięty.");
-                        });
-                };
+			dp.onEventDeleted = function(args) {
+			$.post("event_delete.php",
+			{
+				id: args.e.id()
+			},
+			function() {
+				console.log("Usunięty.");
+				});
+			};
 
-                dp.onEventMoved = function(args) {
-                    $.post("event_move.php",
-                            {
-                                id: args.e.id(),
-                                newStart: args.newStart.toString(),
-                                newEnd: args.newEnd.toString()
-                            },
-                            function() {
-                                console.log("Przeniesiony.");
-                            });
-                };
+			dp.onEventMoved = function(args) {
+				$.post("event_move.php",
+				{
+					id: args.e.id(),
+					newStart: args.newStart.toString(),
+					newEnd: args.newEnd.toString()
+				},
+						function() {
+							console.log("Przeniesiony.");
+						});
+			};
 
-                dp.onEventResized = function(args) {
-                    $.post("event_change.php",
-                            {
-                                id: args.e.id(),
-                                newStart: args.newStart.toString(),
-                                newEnd: args.newEnd.toString()
-                            },
-                            function() {
-                                console.log("Zeskalowany");
-                            });
-                };
+			dp.onEventResized = function(args) {
+				$.post("event_change.php",
+				{
+					id: args.e.id(),
+					newStart: args.newStart.toString(),
+					newEnd: args.newEnd.toString()
+				},
+					function() {
+						console.log("Zeskalowany");
+					});
+				};
 
-                dp.onTimeRangeSelected = function(args) {
-                    var name = prompt("Nazwa:", "Event");
+				dp.onTimeRangeSelected = function(args) {
+					var name = prompt("Nazwa:", "Event");
 					var note = prompt("Opis :", "Event");
-                    dp.clearSelection();
-                    if (!name) return;
-                    var e = new DayPilot.Event({
-                        start: args.start,
-                        end: args.end,
-                        id: DayPilot.guid(),
-                        note: args.note,
-                        text: name
-                    });
-                    dp.events.add(e);
+					dp.clearSelection();
+					if (!name) return;
+					var e = new DayPilot.Event({
+						start: args.start,
+						end: args.end,
+						id: DayPilot.guid(),
+						note: args.note,
+						text: name
+					});
+					dp.events.add(e);
 
-                    $.post("event_create.php",
-                            {
-                                start: args.start.toString(),
-                                end: args.end.toString(),
-                                name: name,
-								note: note
-                            },
-                            function() {
-                                console.log("Stworzono.");
-                            });
+					$.post("event_create.php",
+					{
+						start: args.start.toString(),
+						end: args.end.toString(),
+						name: name,
+						note: note
+					},
+						function() {
+							console.log("Stworzono.");
+						});
+				};
 
-                };
-
-                dp.onEventClick = function(args) {
+				dp.onEventClick = function(args) {
 					console.log(args);
-                    alert("Data/Godzina: " + args.e.start() + " - " +  args.e.end() /*+ args.note*/);
-                };
+					alert("Data/Godzina: " + args.e.start() + " - " +  args.e.end() /*+ args.note*/);
+				};
 
-                dp.init();
+				dp.init();
 
-                loadEvents();
+				loadEvents();
 
-                function loadEvents() {
-                    dp.events.load("event_select.php");
-                }
-
+				function loadEvents() {
+					dp.events.load("event_select.php");
+				}
             </script>
 		</div>
 			<div class="clear">

@@ -2398,7 +2398,7 @@ if (typeof DayPilot.Global === 'undefined') {
         this.borderColor = "#CED2CE";
         this.businessBeginsHour = 9;
         this.businessEndsHour = 18;
-        this.cellHeight = 20;
+        this.cellHeight = 43;
         this.columnMarginRight = 5;
         this.cornerBackColor = "#F3F3F9";
         this.$1Y = true;
@@ -2407,11 +2407,11 @@ if (typeof DayPilot.Global === 'undefined') {
         this.eventHeaderHeight = 14;
         this.eventHeaderVisible = true;
         this.eventsLoadMethod = "GET";
-        this.headerHeight = 20;
+        this.headerHeight = 40;
         this.height = 300;
         this.heightSpec = 'BusinessHours';
         this.hideUntilInit = true;
-        this.hourWidth = 45;
+        this.hourWidth = 55;
         this.initScrollPos = 'Auto';
         this.loadingLabelText = "Loading...";
         this.loadingLabelVisible = true;
@@ -2419,7 +2419,7 @@ if (typeof DayPilot.Global === 'undefined') {
         this.loadingLabelFontColor = "#ffffff";
         this.loadingLabelFontFamily = "Tahoma, Arial, Helvetica, sans-serif";
         this.loadingLabelFontSize = "10pt";
-        this.locale = "en-us";
+        this.locale = "pl-pl";
         this.selectedColor = "#316AC5";
         this.showToolTip = true;
         this.startDate = new DayPilot.Date().getDatePart();
